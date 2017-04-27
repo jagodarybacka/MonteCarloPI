@@ -88,13 +88,13 @@ function init() {
   var range = document.querySelector('.pps');
   var renderInterval = setInterval(function() {
     renderFunction();
-  }, range.value);
+  }, 1005 - range.value);
 
   range.onchange = function() {
     clearInterval(renderInterval);
     renderInterval = setInterval(function() {
       renderFunction();
-    }, range.value);
+    }, 1005 - range.value);
   }
 
 }
