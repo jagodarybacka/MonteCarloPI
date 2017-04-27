@@ -93,9 +93,14 @@ function init() {
   range.onchange = function() {
     clearInterval(renderInterval);
     renderInterval = setInterval(function() {
+      if (config.pointsTotal < Number.MAX_SAFE_INTEGER) {
       renderFunction();
+      }
     }, 1005 - range.value);
   }
-
+  
+  config.canvas.ondblclick = function() {
+    clearInterval(renderInterval);
+  }
 }
 init();
