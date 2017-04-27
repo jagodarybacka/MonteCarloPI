@@ -93,7 +93,7 @@ function init() {
   range.onchange = function() {
     clearInterval(renderInterval);
     renderInterval = setInterval(function() {
-      if (config.pointsTotal < Number.MAX_SAFE_INTEGER) {
+      if (config.pointsTotal < 600000) {
       renderFunction();
       }
     }, 1005 - range.value);
